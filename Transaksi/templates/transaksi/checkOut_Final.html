@@ -1,0 +1,70 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% include 'include/css.html' %}
+	<title>CHECKOUT FINAL</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+		<a class="navbar-brand ml-5" href="{% url "home" %}">
+		  <img src="{%static 'images/logo.png' %}" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  </nav>
+<main>
+
+    <div class="d-flex align-items-center mt-2">
+        <div class="col text-center">
+            <img src="{% static 'images/payment.jpg' %}" width="500px" alt="">
+            {% block bodyContent %}
+              <h1>
+                 {# Yuk! Tinggal Satu Langkah Lagi #}
+                 {{status}}
+              </h1>
+              <p>
+                  {# Kamu dapat menikmati perjalanan yang kamu impikan #}
+                  {{body}}
+              <button href="" id="pay-button" class="btn btn-payment mt-3 px-3">
+                  BAYAR
+              </button>
+            {% endblock bodyContent %}
+        </div>
+    </div>
+</main>
+	
+	<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-EOjbQuFJwheGValW"></script>
+    <script type="text/javascript">
+    	var token = "{{object.token}}"
+      document.getElementById('pay-button').onclick = function(){
+        // SnapToken acquired from previous step
+        snap.pay(token, {
+          // Optional
+          onSuccess: function(result){
+          	console.log("Success : " + result);
+            // /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            alert("Success accepted \r\n"+JSON.stringify(result));
+          },
+          // Optional
+          onPending: function(result){
+            console.log("Pending : " + result);
+            // /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+            alert("Payment accepted \r\n"+JSON.stringify(result));
+            location.href = "/checkOut/success/?token=" + token;
+          },
+          // Optional
+          onError: function(result){
+            console.log("Error : " + result);
+            // /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, 'http://127.0.0.1:8000/', 2);
+            alert("Error accepted \r\n"+JSON.stringify(result));
+          }
+        });
+      };
+    </script>
+</body>
+</html>

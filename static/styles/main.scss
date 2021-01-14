@@ -1,0 +1,462 @@
+$maincolor:#0BA0AC;
+$hovercolor :#2dbac4;
+
+body{
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+
+.navbar-brand{
+    img{
+        width: 40px;
+    }
+    
+}
+
+.btn-login{
+    background-color: $maincolor;
+    color : #ffffff;
+    width: 100px;
+    font-weight: bold;
+  
+    &:hover{
+        background-color: $hovercolor;
+        color : #ffffff;
+        width: 100px;
+        font-weight: bold;
+    }
+    
+}
+.nav-link{
+    margin-right: 5px;
+    &:hover{
+        border-bottom: 3px solid $maincolor ;
+      
+    }
+   
+}
+
+
+
+header{
+    padding: 200px 0px 165px;
+    background-image: url('../images/banner.png');
+    background-size: cover;
+    
+    
+    .banner-txt{
+        color: #ffffff;
+        font-size: 40px;
+        margin-top: 40px;
+        font-weight: bold;
+       
+    }
+}
+
+
+
+.btn-get-started{
+    background-color: $maincolor ;
+    color : #ffffff;
+    &:hover{
+        background-color: $hovercolor;
+        color : #ffffff;
+    }
+}
+
+
+
+.section-popular{
+    background-color: #EFF9FA;
+    min-height: 1300px;
+    
+    .text-popular{
+            color: #000000;
+            font-weight: bold;
+            font-size: 40px;
+            margin-top: 100px;
+        }
+    
+    .text-popular-2{
+        color: #000000;
+        font-weight: normal;
+        font-size: 15px;
+        margin-top: 110px ;
+    }
+
+   
+}
+.card-travel{
+    margin-top: 50px;
+    .card-body-home{
+        min-height: 150px;
+        border-radius: 20px;
+        .card-title{
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+        
+        img{
+            background-size: cover;
+        }
+        .card-text{
+            margin-top: -15px;
+            font-size: 20px;
+            font-weight:normal;
+        }
+        
+        .btn-details{
+            width: 100px;
+            background-color: $maincolor ;
+            color: white;
+            // border-radius: 15px;
+            &:hover{
+                background-color: $hovercolor;
+                color : #ffffff;
+                width: 100px;
+            }
+        }
+    }
+}
+.card-body-search{
+    min-height: 190px;
+    border-radius: 20px;
+    .card-title{
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+    
+    img{
+        background-size: cover;
+    }
+    .card-text{
+        margin-top: -15px;
+        font-size: 20px;
+        font-weight:normal;
+    }
+    
+    .btn-details{
+        width: 100px;
+        background-color: $maincolor ;
+        color: white;
+        // border-radius: 15px;
+        &:hover{
+            background-color: $hovercolor;
+            color : #ffffff;
+            width: 100px;
+        }
+    }
+}
+
+
+.section-more{
+    background-color: #fff ;
+    min-height: 300px;    
+    
+}
+.text-more{
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+.text-more-2{
+    font-size: 30px;
+}
+.btn-more{
+    width: 200px;
+    height: 50px;
+    margin-top: 120px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    background-color: $maincolor ;
+    color : #ffffff;
+    &:hover{
+        background-color: $hovercolor;
+        color : #ffffff;
+    }
+}
+.section-testimonials{
+    min-height: 506px;
+}
+
+.text-testi{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card-testimonials{
+    margin-top: 20px;
+    min-height: 300px;
+}
+
+.section-footer{
+    a{
+        color: $maincolor;
+    }
+}
+//  footer .section-footer{
+//     margin-top: -2000px;
+// }
+
+
+.section-package-content{
+   
+ 
+    .breadcrumb{
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .breadcrumb-item{
+        &.active{
+            
+            color: $maincolor;
+        }
+    }
+}
+
+.btn-search{
+    background-color: $maincolor ;
+}
+
+.icon-color{
+    color: white;
+}
+
+.section-package{
+    
+    min-height: 1000px;
+    
+    .price-text{
+        // margin-top: -15px;
+        color:  $maincolor;
+        font-size: 20px;
+    }
+    .card-details{
+        padding: 30px;
+        border-radius: 11px;
+    
+    }
+    .join-container {
+        margin-top: -16px;
+
+    }
+    .btn-join-now{
+        background-color: $maincolor;
+        color: #ffffff;
+        border-radius: 0;
+        &:hover{
+            background-color: $hovercolor;
+            color: #fff;
+        }
+    }
+}
+
+
+.color-heart{
+    color: pink;
+}
+h1{ 
+    font-size: 26px;
+}
+h2{
+    font-size: 20px;
+}
+p{
+    font-size: 18px;
+    color: #b1b1b1;
+}
+
+// Modal 
+
+
+.modal-title{
+    color: $maincolor!important;
+    font-size: 50px;
+   margin-left: 20px;
+}
+.modal-content{
+    border-radius: 10px;
+    min-height: 500px;
+    border: none;
+    
+}
+.modal-body{
+    label{
+        color: $maincolor;
+    }
+    img{
+       justify-items: center;
+    }
+    .form-group{
+        input{
+            font-size: 20px;
+        }
+    }
+    .form-control{
+        border-radius: 10px;
+        border-color: $maincolor;
+        height: 50px;
+    }
+   .btn-login-modal{
+
+       border-radius: 10px;
+       background-color: $maincolor;
+       color: #fff;
+       font-weight: bold;
+       font-size: 20px;
+       width: 50%;
+       margin-top: 30px;
+   }
+   .modal-login{
+       margin-top: 30px;
+   }
+}   
+
+.card-size{
+    min-height: 250px  ;
+}
+.header-text{
+    font-weight: bold;
+    h2{
+       font-size: 30px;
+    }
+    
+}
+
+.btn-home-page{
+    background-color: $maincolor;
+    color: #fff;
+    &:hover{
+       background-color: $hovercolor;
+       color: #fff;         
+    }
+
+}
+
+
+.input-person{
+    input{
+        width: 50px;
+        margin-left: 115px;
+    }
+    
+}
+
+.price{
+    margin-left: 150px;
+}
+
+.total-price{
+    h2{
+        font-size: 30px;
+    }
+}
+
+.btn-checkout{
+    margin-top: 100px;
+    width: 200px;
+    background-color: $maincolor;
+    color: #fff;
+    &:hover{
+        background-color: $hovercolor;
+        color: #fff;
+    }
+}
+
+.card-signin {
+      
+    .card-title {
+        margin-bottom: 2rem;
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: $maincolor;
+      }
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  .card-img-left {
+      img{
+        width: 100%;
+        /* Link to your background image using in the property below! */
+        
+        background-size: cover;
+      }
+    
+  }
+}
+  
+ 
+  
+  .form-signin {
+    width: 100%;
+  }
+  
+  .form-signin {
+      
+    .btn-register-login {
+        color: white;
+        background-color: $maincolor;
+        font-size: 80%;
+        border-radius: 5rem;
+        letter-spacing: .1rem;
+        font-weight: bold;
+        padding: 1rem;
+        transition: all 0.2s;
+      }
+  }
+  
+  .form-label-group {
+      justify-items: center;
+     
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-label-group {
+    input {
+    border-color: $maincolor;
+    width: 300px;
+    height: auto;
+    border-radius: 2rem;
+  }
+}
+a{
+    color: $maincolor;
+    &:hover{
+        color: $hovercolor;
+        text-decoration: none;
+    }
+}
+
+.form-label-group{
+   ::placeholder{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+.text-error{
+    font-size: 50px;
+    color: #5a5959;
+    
+}
+
+.btn-payment{
+    background-color: $maincolor;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    // font-weight: bold;
+    &:hover{
+        background-color: $hovercolor;
+        color: white;
+    }
+}   

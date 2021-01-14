@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+	{% include 'include/css.html' %}
+
+ 
+
+    <title>Login</title>
+  </head>
+  <body>
+ 
+
+<main>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto my-5">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+              <img src="{% static 'images/register.png' %}">
+            </div>
+            <div class="card-body mx-5 my-auto text-center ">
+              <img src="{% static 'images/logo-register.png' %}" class="mb-4">
+              <form class="form-signin justify-content-center" method="POST" action="{% url "akun:login" %}?next={{next}}" autocomplete="off">
+                {% csrf_token %}
+                <div class="form-label-group">
+                  <input type="text" id="inputEmail" class="form-control" placeholder="Username / Email address" name="username" required>
+                </div>
+                
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                </div>
+                <p>{{form.error}}</p>
+                <button class="btn btn-register-login btn-block text-uppercase" type="submit">Login</button>
+              </form>
+                <a class=" d-block text-center mt-2 " href="{% url "akun:regis" %}">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+</main>
+
+
+{% include 'include/js.html' %}
+<!-- Modal Checkout -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+  </body>
+</html>

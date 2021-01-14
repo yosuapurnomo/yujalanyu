@@ -1,0 +1,102 @@
+{% extends "PaketView.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+	
+	<main>
+		<section class="section-package-content mt-5">
+			<div class="container">
+			 <div class="row">
+				 <div class="row p-0">
+					 <nav>
+						 <ol class="breadcrumb">
+							 <li class="breadcrumb-item">
+								 Home
+							 </li>
+							 <li class="breadcrumb-item">
+							  Paket Travel
+						  </li>
+						  <li class="breadcrumb-item active">
+							Details Package
+						</li>
+						 </ol>
+					 </nav>
+				 </div>
+			 </div>  
+		</div>
+		
+		</section>
+	
+		<section class="section-package">
+			<div class="container">
+			  <div class="row">
+				<div class="col-lg-8 pl-lg-0">
+					<div class="card card-details">
+						<h1>{{object.nama_paket}}</h1>
+						<p>{{object.destinasi}}	</p>
+						<div class="gallery ml-2">
+							{% with object.images.all|first as pertama %}
+							<div class="xzoom-container">
+								   <img 
+									src="{{pertama.getImage}}" 
+									class="xzoom"
+									id="xzoom-default"
+									xoriginal="{{pertama.id}}"> 
+							</div>
+							<div class="xzoom-thumbs mt-2">
+								{% for x in object.images.all %}
+								<img 
+									src="{{x.image.url}}" 
+									class="xzoom-gallery"
+									width="120"
+									xpreview="{{pertama.id}}">
+								</a>
+								{% endfor %}
+							</div>
+							{% endwith %}
+						</div>
+	
+						<h1>Deskripsi Paket</h1>
+						<p class="text-description">{{object.about}}</p>
+			  </div>
+			  
+			</div>
+			<div class="col-lg-4">
+			  <div class="card card-details card-right">
+				  <h2>Trip Informations</h2>
+				  <hr>
+				  <table class="trip-information">
+					  <tr>
+						  <td width='50%'>Duration</td>
+						  <td width='50%' class="text-right">
+							 {{object.lama_hari}} Hari
+						  </td>
+					  </tr>
+					  <tr>
+						  <td width='40%'>Price</td>
+						  <td width='70%' class="text-right">
+						   Rp {{object.harga|intcomma}} / Person
+						  </td>
+					  </tr>
+					  <tr>
+						  <td width='50%'>Date of Depature</td>
+						  <td width='50%' class="text-right">
+							 {{object.tgl_berangkat}}
+						  </td>
+					  </tr>
+				  </table>
+		  </div>
+		  <div class="join-container">
+			  <button data-toggle="modal" data-target="#modalCheckout" class="btn btn-block btn-join-now mt-3 py-2">
+				  Join Now
+			  </button>
+		   </div>
+		   {% include "include/modal_checkout.html" %}
+	   </div>
+	  </div>      
+	  </div>
+			</div>
+		  </section>
+	</main>
+{% endblock content %}

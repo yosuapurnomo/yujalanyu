@@ -1,0 +1,128 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	{% include './include/css.html' %}
+    <title>{{title}}</title>
+  </head>
+  <body>
+     <!-- Navbar -->
+ 
+{% include './include/navbar.html' %}
+
+<header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <p class="banner-txt">
+            Find Your Travel
+            <br>
+            Local Expert
+          </p>
+          <a href="{% url 'paket:search' %}" class="btn btn-get-started mt-4 mr-4">Get Started</a>
+        </div>
+        <div class="col-md-4 text-center d-none d-lg-block">
+          <img src="{% static 'images/line.png' %}" alt="">
+        </div>
+        <div class="col-md-4 d-none d-lg-block ml-auto">
+          <img src="{% static 'images/BannerTextLogo.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+</header>
+
+<main>
+  <section class="section-popular" id="popular">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 text-left">
+         <p class="text-popular">
+          Popular Travel
+          <br>
+          Itineraries
+         </p>     
+        </div>
+        <div class="col-6 text-left">
+          <p class="text-popular-2">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor repellat tempora assumenda sit quibusdam voluptatibus quasi eos. Odit laboriosam necessitatibus cum laborum, velit eveniet repudiandae cumque ex laudantium deleniti quis.
+          </p>
+         </div>
+         {% for i in data %}
+         {% if forloop.counter0 < 6 %}
+          <div class="col-sm-6 col-md-4 ">
+            <div class="card-travel shadow-lg rounded" >
+                {% with i.images.all|first as img %}
+                  <img class="card-img-top" src="{{img.image.url}}" height="200px" alt="Card image cap">
+                {% endwith %}
+              <div class="card-body card-body-home" height="100px">
+                <h5 class="card-title">{{i.nama_paket}}</h5>
+                <p class="card-text">{{i.destinasi}} </p> 
+                <a href="{% url 'paket:detail' i.slug%}" class="btn btn-details float-right">Details</a>
+              </div>
+            </div>
+          </div>
+         {% endif %}
+         {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-more">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-5">
+          <div class="text-more">
+             Find More 
+            <br>
+            <div class="text-more-2">Itineraries </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-5 ">
+          <a href="" class="btn btn-more">More Itineraries</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Section Testimonials -->
+
+  <section class="section-testimonials" id="testimonials">
+    <h1 class="text-testi">Our Testimonials</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-testimonials shadow-sm">
+            <div class="card-body">
+              <p class="card-text"> " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, voluptatibus vel! Aliquam vero vel dolorem ullam libero labore sunt ab veniam sequi, totam numquam, sint odio delectus perspiciatis cum reiciendis. "</p>
+              <img src="{% static 'images/user-1.png' %}" alt="" class="float-right"> 
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-testimonials shadow-sm">
+            <div class="card-body">
+              <p class="card-text">" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut ducimus consequuntur temporibus velit culpa nihil corrupti sed maxime hic veniam? Labore rem dolorum repudiandae asperiores! Enim totam eos debitis non! "</p>
+              <img src="{% static 'images/user-1.png' %}" alt="" class="float-right">  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+{% include './include/footer.html' %}
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include './include/js.html' %}
+ 
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% include 'include/css.html' %}
+	<title>{{title}}</title>
+</head>
+<body>
+	{% include 'include/navbar.html' %}
+
+	<div>
+		{% with data.images.all|first as image %}
+		    <img src="{{image.getImage}}">
+		{% endwith %}
+		{{data.nama_paket}}
+		<h1>
+			IDR {{data.harga|intcomma}}
+		</h1>
+		
+		<form method="POST" action="{% url "transaksi:url_success" %}">
+			{% csrf_token %}
+			<label>Jumlah</label>
+			{{form.jumlah}}
+			<input type="hidden" name="{{form.paket.label}}" value={{data.slug}}>
+			<input type="hidden" name="{{form.user.label}}" value={{user.email}}>
+			<input type="submit">
+		</form>
+	</div>
+	
+	
+</body>
+</html>

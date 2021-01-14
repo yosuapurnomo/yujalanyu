@@ -1,0 +1,80 @@
+{% extends "PaketView.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<main>
+    
+    <section class="section-package-content mt-5">
+        <div class="container">
+         <div class="row">
+             <div class="col-sm-6 col-md-4 p-0 ml-3">
+                 <nav>
+                     <ol class="breadcrumb">
+                         <li class="breadcrumb-item">
+                             Home
+                         </li>
+                         <li class="breadcrumb-item active">
+                          Paket Travel
+                      </li>
+                     </ol>
+                 </nav>
+             </div>
+         </div>
+
+		<form action="{% url 'paket:search' %}">
+         <div class="input-group">
+			<input 
+    			class="form-control" 
+    			type="text"
+    			name="search" 
+    			placeholder="Search" 
+    			aria-label="Search">
+          <div class="input-group-append">
+              <span >
+				  <button class="btn btn-search" type="submit">
+					<i class="fas fa-search icon-color"
+                    aria-hidden="true"></i>
+				  </button>
+                </span>
+            </div>
+		  </div>
+		</form>   
+    </div>
+    </section>
+
+    <section class="section-package ">
+        <div class="container">
+          <div class="row">
+          {% if error is not None %}
+            <div class="text-center">
+              <p class="text-center text-error mx-5 my-5">{{error}}</p>
+            </div>
+         
+            
+        
+            
+          {% else %}
+            {% for i in paket_object %}
+              <div class="col-6 col-md-4  ">
+                <div class="card-travel shadow-lg rounded" >
+                   
+                      {% with i.images.all|first as img_pertama %}
+                      <img class="card-img-top" src="{{img_pertama.image.url}}" height="200px" alt="Card image cap">
+                      {% endwith %}
+                      <div class="card-body card-body-search" height="100px">
+                      <h5 class="card-title">{{i.nama_paket}}</h5>
+                      <p class="card-text">{{i.destinasi}}</p>
+            				  <p class="price-text mt-4">{{i.harga|intcomma}} K / Person</p>
+            				  <a href="{% url 'paket:detail' i.slug %}" class="btn btn-details float-right">Details</a>
+                    </div>
+                  </div>
+              </div>
+            {% endfor %} 
+          {% endif %}
+          </div>
+        </div>
+      </section>
+</main>
+{% endblock content %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include "./include/css.html" %}
+	<title>{{title}}</title>
+	
+
+</head>
+<body>
+
+	{% include './include/navbar.html' %}
+	{% block content %}
+	
+	{% endblock content %}
+	{% include './include/footer.html' %}
+	{% include './include/modal.html' %}
+	{% include "./include/js.html" %}
+</body>
+</html>
