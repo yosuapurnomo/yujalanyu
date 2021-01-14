@@ -30,9 +30,13 @@
               <p>
                   {# Kamu dapat menikmati perjalanan yang kamu impikan #}
                   {{body}}
+                  </p>
               <button href="" id="pay-button" class="btn btn-payment mt-3 px-3">
                   BAYAR
               </button>
+              <a href="{% url 'home' %}" id="back" class="btn btn-payment mt-3 px-3">
+                Kembali
+              </a>
             {% endblock bodyContent %}
         </div>
     </div>
