@@ -26,7 +26,7 @@ SECRET_KEY = 'r27!npj4#macmx73gxhe6-+dr!212yjp12h!&pwnw&478@)*1w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['yujalanyu.site', '127.0.0.1',]
+ALLOWED_HOSTS = ['yujalanyu.site', '127.0.0.1', 'localhost', 'www.yujalanyu.site']
 # ALLOWED_HOSTS = []
 
 # Application definition
@@ -129,7 +129,9 @@ LOGIN_URL = '/login/'
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
+STATIC_ROOT = '/home/yujalany/yujalanyu/static/'
+
+# STATIC_ROOT = '/home/websites/dj.yujalanyu.site/static/'
 
 STATIC_URL = '/static/'
 
@@ -139,4 +141,8 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_ROOT = '/home/yujalany/yujalanyu/media/' 
+
+# MEDIA_ROOT = '/home/websites/dj.yujalanyu.site/static/'
