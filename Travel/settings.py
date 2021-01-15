@@ -131,12 +131,12 @@ LOGIN_URL = '/login/'
 
 # STATIC_ROOT = '/home/yujalany/yujalanyu/static/'
 
-STATIC_ROOT = '/home/websites/dj.yujalanyu.site/static/'
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    # os.path.join(BASE_DIR, 'static')
+    BASE_DIR+"/static/"
 ]
 
 MEDIA_URL = '/media/'
@@ -144,5 +144,6 @@ MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # MEDIA_ROOT = '/home/yujalany/yujalanyu/media/' 
+STATIC_ROOT = '/home/websites/dj.yujalanyu.site/static/'
 
 MEDIA_ROOT = '/home/websites/dj.yujalanyu.site/static/'
