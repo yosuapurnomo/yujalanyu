@@ -1,10 +1,10 @@
 # DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
  
-PassengerAppRoot "/home/namauser/namafolderinstalasi"
+PassengerAppRoot "/home/yujalany/yujalanyu"
  
 PassengerBaseURI "/."
  
-PassengerPython "/home/namauser/virtualenv/namafolderinstalasi/3.5/bin/python3.5"
+PassengerPython "/home/namauser/virtualenv/yujalanyu/3.8/bin/python3.8"
  
 # DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
  
