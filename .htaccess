@@ -1,0 +1,11 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+ 
+PassengerAppRoot "/home/namauser/namafolderinstalasi"
+ 
+PassengerBaseURI "/."
+ 
+PassengerPython "/home/namauser/virtualenv/namafolderinstalasi/3.5/bin/python3.5"
+ 
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+ 
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
