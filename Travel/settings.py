@@ -27,8 +27,6 @@ SECRET_KEY = 'r27!npj4#macmx73gxhe6-+dr!212yjp12h!&pwnw&478@)*1w'
 DEBUG = False
 
 
-# ALLOWED_HOSTS = ['yujalanyu.site', '127.0.0.1',]
-
 ALLOWED_HOSTS = ['yujalanyu.site', '127.0.0.1', 'localhost', 'www.yujalanyu.site']
 # ALLOWED_HOSTS = []
 
