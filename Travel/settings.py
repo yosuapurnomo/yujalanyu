@@ -160,7 +160,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT = '/home/yujalany/yujalanyu/media/'
+MEDIA_ROOT = '/home/yujalany/public_html/media/'
 
 STATIC_ROOT = '/home/yujalany/yujalanyu/assets/'
 
