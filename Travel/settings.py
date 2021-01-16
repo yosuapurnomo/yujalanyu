@@ -151,23 +151,17 @@ USE_TZ = True
 
 LOGIN_URL = '/login/'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-    # BASE_DIR+"/static/"
-]
-
 MEDIA_URL = '/media/'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
-MEDIA_ROOT = '/home/yujalany/yujalanyu/media/' 
+MEDIA_ROOT = '/home/yujalany/yujalanyu/media/'
+
 STATIC_ROOT = '/home/yujalany/yujalanyu/assets/'
-# STATIC_ROOT = '/home/websites/dj.yujalanyu.site/static/'
 
-# MEDIA_ROOT = '/home/websites/dj.yujalanyu.site/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
