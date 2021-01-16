@@ -90,12 +90,23 @@ WSGI_APPLICATION = 'Travel.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Travel',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Travel',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'yujalany_Travel',
+        'USER': 'yujalany_root',
+        'PASSWORD': '$;vYoo9_)Gv}',
         'HOST': 'localhost',
         'PORT': '3306',
     }
