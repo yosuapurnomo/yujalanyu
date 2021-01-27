@@ -51,7 +51,7 @@ class createUser(CreateView):
 		form = self.get_form()
 		if form.is_valid():
 			grup = Group.objects.get(name="User")
-			user = form.save(commit=False)
+			user = form.save()
 			user.is_activate = True
 			user.save()
 			user.groups.add(grup)
