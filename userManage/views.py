@@ -51,10 +51,11 @@ class createUser(CreateView):
 		form = self.get_form()
 		if form.is_valid():
 			grup = Group.objects.get(name="User")
-			user = form.save()
+			print(self.request.POST)
+			user = User.objects.create_user(self.request.POST['username'], self.request.POST['email'], self.request.POST['password1'])
 			user.is_activate = True
-			user.save()
 			user.groups.add(grup)
+			user.save()
 			return redirect('home')
 		else:
 			return super().post(request)
