@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'r27!npj4#macmx73gxhe6-+dr!212yjp12h!&pwnw&478@)*1w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['yujalanyu.site', '127.0.0.1', 'localhost', 'www.yujalanyu.site']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['yujalanyu.site', '127.0.0.1', 'localhost', 'www.yujalanyu.site']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'Travel.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -99,16 +99,16 @@ WSGI_APPLICATION = 'Travel.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'yujalany_Travel',
-        'USER': 'yujalany_root',
-        'PASSWORD': '$;vYoo9_)Gv}',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'yujalany_Travel',
+#         'USER': 'yujalany_root',
+#         'PASSWORD': '$;vYoo9_)Gv}',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -158,8 +158,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]
 
-MEDIA_ROOT = '/home/yujalany/public_html/media/'
+# MEDIA_ROOT = '/home/yujalany/public_html/media/'
 
-STATIC_ROOT = '/home/yujalany/yujalanyu/static/'
+# STATIC_ROOT = '/home/yujalany/yujalanyu/static/'
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

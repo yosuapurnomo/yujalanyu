@@ -33,6 +33,8 @@ class Login(LoginView):
 			return self.success_url
 		else:
 			self.success_url = self.request.GET['next']
+			if self.success_url == '':
+				self.success_url = reverse_lazy('home')
 			return self.success_url
 
 class Logout(LogoutView):
