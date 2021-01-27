@@ -19,33 +19,27 @@
             </div>
             <div class="card-body mx-5 text-center ">
               <img src="{% static 'images/logo-register.png' %}" class="mb-3">
-              <!-- <h5 class="card-title text-center">REGISTER</h5> -->
               <form method="POST" autocomplete="off" class="form-signin justify-content-center">
                 {% csrf_token %}
                 <div class="form-label-group">
                   {{form.username}}
-{#                   <input type="text" id="{{form.username.id_for_label}}" name="{{form.username.name}}" class="form-control" placeholder="Username" required autofocus> #}
                   
                 </div>
   
                 <div class="form-label-group">
                   {{form.email}}
-                  {# <input type="email" id="inputEmail" name="{{form.email.name}}" class="form-control" placeholder="Email address" required> #}
                  
                 </div>
                 
                 <hr>
   
                 <div class="form-label-group">
-                  {{form.password1}}
-                  {# <input type="password" id="{{form.password1.id_for_label}}" name="{{form.password1.name}}" class="form-control" placeholder="Password" required> #}
-                  
+                  {{form.password1}}                
 
                 </div>
                 
                 <div class="form-label-group">
                   {{form.password2}}
-                  {# <input type="password" id="{{form.password2.id_for_label}}" name="{{form.password2.name}}" class="form-control" placeholder="Confirm Password" required> #}
                   {% for error in form %}
                     <p>{{error.errors}}</p>
                   {% endfor %}
